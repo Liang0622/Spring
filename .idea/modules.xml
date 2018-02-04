@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AutowireAndSpel/AutowireAndSpel.iml" filepath="$PROJECT_DIR$/AutowireAndSpel/AutowireAndSpel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BeanInitToDestory/BeanInitToDestory.iml" filepath="$PROJECT_DIR$/BeanInitToDestory/BeanInitToDestory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BeanSetValue/BeanSetValue.iml" filepath="$PROJECT_DIR$/BeanSetValue/BeanSetValue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FirstSpringCase/FirstSpringCase.iml" filepath="$PROJECT_DIR$/FirstSpringCase/FirstSpringCase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultiSpringXml/MultiSpringXml.iml" filepath="$PROJECT_DIR$/MultiSpringXml/MultiSpringXml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring.iml" filepath="$PROJECT_DIR$/Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringJDBC/SpringJDBC.iml" filepath="$PROJECT_DIR$/SpringJDBC/SpringJDBC.iml" />
+    </modules>
+  </component>
+</project>

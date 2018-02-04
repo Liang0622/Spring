@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--配置人类bean-->
+    <!--如果autowire="byName"，就只会按命名匹配，不会再根据类型去匹配。匹配不到的域属性值为null-->
+    <bean id="person" class="com.vic.entity.Person" autowire="byName">
+        <property name="name" value="小黑"/>
+        <property name="age" value="13"/>
+        <!--  <property name="dog" ref="dog"/>-->
+    </bean>
+
+    <!--配置Dog对应的bean-->
+    <bean id="dog" class="com.vic.entity.Dog">
+        <property name="name" value="小黑狗1"/>
+        <property name="age" value="1"/>
+    </bean>
+
+    <bean id="person1" class="com.vic.entity.Person" autowire="byType">
+        <property name="name" value="小黑1"/>
+        <property name="age" value="15"/>
+        <!--  <property name="dog" ref="dog"/>-->
+    </bean>
+
+    <!--验证 byType  存在超过1个的相同类型时，Person的实例不能用autowire="byType"，不然会编译报错-->
+    <!--001、本类有两个实例-->
+    <!--<bean id="dog2" class="com.vic.entity.Dog">
+        <property name="name" value="小黑狗2"/>
+        <property name="age" value="2"/>
+    </bean>-->
+    <!--002、该类被继承-->
+    <!--<bean id="honeyDog" class="com.vic.entity.HoneyDog">
+        <property name="name" value="哈尼狗"/>
+        <property name="age" value="2"/>
+    </bean>-->
+
+
+    <!--
+   Spring  el 是 spring3.0之后出现的！
+-->
+    <bean id="person2" class="com.vic.entity.Person" autowire="byName">
+        <property name="name" value="#{person.name}"/>
+        <property name="age" value="#{person.age>15?18:12}"/>
+    </bean>
+
+
+
+
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--管理dao层的对象-->
+    <bean id="studentDao" class="com.vic.dao.impl.StudentDaoImpl"/>
+    <!--管理service层的对象-->
+    <bean id="studentService" class="com.vic.service.impl.StudentServiceImpl">
+        <property name="dao" ref="studentDao"/>
+    </bean>
+    <!--实例化一个学生对象-->
+    <!--xml文件中所有的bean 都是单例的
+      默认scope="singleton"
+      scope="prototype"  设置原型   默认也是延迟加载
+
+       lazy-init="true" 设置延迟加载
+-->
+    <bean id="student" class="com.vic.pojo.Student" lazy-init="true" scope="prototype">
+        <property name="id" value="20"/>
+        <property name="name" value="小黑"/>
+    </bean>
+</beans>
